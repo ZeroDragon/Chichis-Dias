@@ -12,10 +12,13 @@ function salvar(){
 	var t=setTimeout("$('#credenciales').hide('slow')",1000);
 }
 function borrar(){
+	$('#credenciales').html('');
+	$('#credenciales').show();
 	localStorage['username'] = '';
 	localStorage['password'] = '';
 	$('#username, #password').val('');
 	$('#credenciales').html('Borrado');
+	var t=setTimeout("$('#credenciales').hide('slow')",1000);
 }
 $(document).ready(function(){
 	if(localStorage['username'])
@@ -56,7 +59,7 @@ Password: <input type="password" id="password" /><br/>
 <input type="button" onClick="salvar()" value="Salvar Credenciales" />
 <input type="button" onClick="borrar()" value="Borrar" />
 <div id="credenciales"></div>
-La lista de las chichis
+<div>La lista de las chichis</div>
 <div id="elekipo"></div>
 <div id="nuevo"><input type="text" id="miembro" value="@"><input type="button" onClick="miembronuevo()" value="( o )( o )"></div>
 </body>

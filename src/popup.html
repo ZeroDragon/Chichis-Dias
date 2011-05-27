@@ -31,20 +31,7 @@ function despliega(){
 		$('#mensaje').html(ekipo.join(' '));
 	}
 	cuantos = 115 - $('#mensaje').val().length;
-	$('#conteo').html(cuantos);
-}
-function traelas(cuantas){
-	pagina = Math.ceil (cuantas / 20);
-	for(var x=1; x<=cuantas; x++){
-		$.getJSON('json.php?trae='+x, function(data) {
-		  var items = [];
-		
-		  $.each(data.images, function(key, val) {
-		    items.push('<div style="float:left; width:75px; height:75px; margin:4px;"><a href="http://twitpic.com/'+ val.short_id +'"><img width="75" height="75" src="http://twitpic.com/show/mini/' + val.short_id + '"></a></div>');
-		  });
-		  $('#body').html($('#body').html() + items.join(''));
-		});
-	}
+	$('#conteo').html('Caracteres disponibles: '+cuantos);
 }
 </script>
 </html>
