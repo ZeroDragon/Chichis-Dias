@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link type="text/css" href="css/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jqueryui.js"></script>
+  </head>
+  <body>
+    <script>
+      function mandar() {
+        return function(info, tab) {
+          chrome.tabs.insertCSS(null, {file: "css/jquery-ui-1.8.13.custom.css"},function(){
+            chrome.tabs.executeScript(null, { file: "js/jquery.js" }, function() {
+              chrome.tabs.executeScript(null, { file: "js/jqueryui.js" }, function(){
+                chrome.tabs.executeScript(null, { file: "js/traelos.js" }, function(){
+                  chrome.tabs.executeScript(null, { code: "display('"+info.srcUrl+"','"+localStorage['username']+"','"+localStorage['password']+"','"+localStorage['equipo']+"');" });
+                });
+              });
+            });
+          });
+        };
+      };
+      chrome.contextMenus.create({
+        "title" : "Chichis Dias! >>",
+        "type" : "normal",
+        "contexts" : ["image"],
+        "onclick" : mandar()
+      });
+    </script>
+  </body>
+</html>

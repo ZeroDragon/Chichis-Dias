@@ -1,7 +1,9 @@
 <html>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<link type="text/css" href="css/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jqueryui.js"></script>
 <form method="POST" id="formu" target="waza" action="http://twitpic.com/api/uploadAndPost" enctype='multipart/form-data'>
-<input type="file" name="media"/><br />
+<input type="file" id="lamedia" name="media"/><br />
 <input type="hidden" id="eluser" name="username" value="" />
 <input type="hidden" id="elpass" name="password" value="" />
 <textarea name="message" id="mensaje" style="width:300px; height:100px;"></textarea>
