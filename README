@@ -16,8 +16,8 @@ Se preguntaran que es el .zip en raiz?
 ######################################################################
 TODO's:
 *MUCHO CSS para que se vea bonito
-*Cambiar el login por oauth
-*Ver como hacerle para agarrar una imagen desde el mismo browser sin tener que bajarla
+*Cambiar el login por oauth ( http://www.dabbleboard.com/draw?b=ZeroDragon&i=0&c=535c1180744f9e9b890e1198f31a5ecfc0e4cb89 )
+*Ver como hacerle para agarrar una imagen desde el mismo browser sin tener que bajarla 
 *Cerrarse automaticamente cuando la imagen se suba exitosamente
 	*Leer el output de twitpic.com, no solo mostrarlo.
 *Lo que valla saliendo en el transcurso
@@ -31,4 +31,5 @@ Tweets Programados? (propuesto por @onezetty)
 Tecnologias usadas:
 *Jquery
 *HTML5 (localStorage)
+*PHP (lado del servidor)
 creo q es todo
