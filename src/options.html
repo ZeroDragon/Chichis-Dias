@@ -1,0 +1,63 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<title>My Test Extension Options</title></head>
+<script type="text/javascript">
+function salvar(){
+	$('#credenciales').html('');
+	$('#credenciales').show();
+	localStorage['username'] = $('#username').val();
+	localStorage['password'] = $('#password').val();
+	$('#credenciales').html('Guardado');
+	var t=setTimeout("$('#credenciales').hide('slow')",1000);
+}
+function borrar(){
+	localStorage['username'] = '';
+	localStorage['password'] = '';
+	$('#username, #password').val('');
+	$('#credenciales').html('Borrado');
+}
+$(document).ready(function(){
+	if(localStorage['username'])
+		$('#username').val(localStorage['username']);
+	if(localStorage['equipo'])	
+		traelos();
+});
+function traelos(){
+	$('#elekipo').html('');
+	ekipo = localStorage['equipo'].split('#');
+	$.each(ekipo, function(key, val){
+		$('#elekipo').append("<div id='"+key+"'>"+(parseInt(parseFloat(key)+1))+" - "+val+" - <a href='javascript:;' onclick='borramiembro("+key+");'>[x]</a></div>");
+	});
+	$('#miembro').val('@');
+	$('#miembro').focus();
+}
+function borramiembro(key){
+	cual = parseInt(parseFloat(key));
+	ekipo = localStorage['equipo'].split('#');
+	ekipo.splice(cual,1);
+	localStorage['equipo'] = ekipo.join('#');
+	traelos();
+}
+function miembronuevo(){
+	if(!localStorage['equipo']){
+		ekipo = new Array();
+	}else{
+		ekipo = localStorage['equipo'].split('#');
+	}
+	ekipo.push($('#miembro').val());
+	localStorage['equipo'] = ekipo.join('#');
+	traelos();
+}
+</script>
+<body>
+Username: <input type="text" id="username" value=""/><br/>
+Password: <input type="password" id="password" /><br/>
+<input type="button" onClick="salvar()" value="Salvar Credenciales" />
+<input type="button" onClick="borrar()" value="Borrar" />
+<div id="credenciales"></div>
+La lista de las chichis
+<div id="elekipo"></div>
+<div id="nuevo"><input type="text" id="miembro" value="@"><input type="button" onClick="miembronuevo()" value="( o )( o )"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<form method="POST" id="formu" target="waza" action="http://twitpic.com/api/uploadAndPost" enctype='multipart/form-data'>
+<input type="file" name="media"/><br />
+<input type="hidden" id="eluser" name="username" value="" />
+<input type="hidden" id="elpass" name="password" value="" />
+<textarea name="message" id="mensaje" style="width:300px; height:100px;"></textarea>
+<br /><input type="submit" />
+</form>
+<div id="conteo"></div>
+<iframe src="waza.html" id="waza" name="waza"></iframe>
+<div id="body">
+</div>
+<script type="text/javascript" >
+$(document).ready(function(){
+	if(localStorage['username'] && localStorage['password']){
+		despliega();
+		$('#eluser').val(localStorage['username']);
+		$('#elpass').val(localStorage['password']);
+	}else{
+		$('#formu').children().attr('disabled','true');
+		$('#conteo').html('Ve a las opciones y settea tu username y password de twitter');
+	}
+});
+$('#mensaje').keyup(function(){
+	despliega();
+});
+function despliega(){
+	if(localStorage['equipo']){
+		ekipo = localStorage['equipo'].split('#');
+		$('#mensaje').html(ekipo.join(' '));
+	}
+	cuantos = 115 - $('#mensaje').val().length;
+	$('#conteo').html(cuantos);
+}
+function traelas(cuantas){
+	pagina = Math.ceil (cuantas / 20);
+	for(var x=1; x<=cuantas; x++){
+		$.getJSON('json.php?trae='+x, function(data) {
+		  var items = [];
+		
+		  $.each(data.images, function(key, val) {
+		    items.push('<div style="float:left; width:75px; height:75px; margin:4px;"><a href="http://twitpic.com/'+ val.short_id +'"><img width="75" height="75" src="http://twitpic.com/show/mini/' + val.short_id + '"></a></div>');
+		  });
+		  $('#body').html($('#body').html() + items.join(''));
+		});
+	}
+}
+</script>
+</html>
