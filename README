@@ -1,6 +1,8 @@
 Extension de Google Chrome
 <Inserte aqui las politicas de GNU CC donde dice que pueden copiar y modificar sin pedos pero no se pasen de wevos>
 
+
+######################################################################
 Descripcion:
 Esta es una extension para subir imagenes a twitpic facilmente y mandar un twitt automatico a una lista de personas recurrente personalizada
 
@@ -9,9 +11,23 @@ El nombre Chichis Dias viene porque acostumbramos a mandar varias imagenes de ch
 Se preguntaran que es el .zip en raiz?
 	Es el key para compilar la extension (nose para que sirva, pero google chrome la creo y dijo que la guardara en una locacion segura y que mas seguro que la web :D)
 
+
+######################################################################
 TODO's:
+*MUCHO CSS para que se vea bonito
 *Cambiar el login por oauth
 *Ver como hacerle para agarrar una imagen desde el mismo browser sin tener que bajarla
 *Cerrarse automaticamente cuando la imagen se suba exitosamente
 	*Leer el output de twitpic.com, no solo mostrarlo.
 *Lo que valla saliendo en el transcurso
+
+Tweets Programados? (propuesto por @onezetty)
+	requeriria tener el chrome abierto para que funcione, o salvar la sesion en un servidor remoto
+	tambien se necesita tener listo antes el modulo para subir imagenes desde locaciones remotas
+
+
+######################################################################
+Tecnologias usadas:
+*Jquery
+*HTML5 (localStorage)
+creo q es todo
