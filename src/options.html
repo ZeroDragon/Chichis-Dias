@@ -1,7 +1,7 @@
 <html>
 <head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<title>My Test Extension Options</title></head>
+<title>Chichis Dias - Opciones de configuracion</title></head>
 <script type="text/javascript">
 function salvar(){
 	$('#credenciales').html('');
@@ -27,11 +27,17 @@ $(document).ready(function(){
 		traelos();
 });
 function traelos(){
-	$('#elekipo').html('');
+	$('#elekipo, #test').html('');
 	ekipo = localStorage['equipo'].split('#');
 	$.each(ekipo, function(key, val){
 		$('#elekipo').append("<div id='"+key+"'>"+(parseInt(parseFloat(key)+1))+" - "+val+" - <a href='javascript:;' onclick='borramiembro("+key+");'>[x]</a></div>");
 	});
+	if (!localStorage['saludo'])
+		localStorage['saludo'] = '';
+	$('#test').html( localStorage['saludo'] + ekipo.join(' ')+' http://twitpic.com/xxxxxx');
+	cuato = 140 - $('#test').text().length;
+	$('#disponibles').text(cuato);
+	$('#saludo').val(localStorage['saludo']);
 	$('#miembro').val('@');
 	$('#miembro').focus();
 }
@@ -52,6 +58,17 @@ function miembronuevo(){
 	localStorage['equipo'] = ekipo.join('#');
 	traelos();
 }
+function saludo(){
+	localStorage['saludo'] = $('#saludo').val() + ' ';
+	traelos();
+}
+function masterexploder(){
+	localStorage['username'] = '';
+	localStorage['password'] = '';
+	localStorage['equipo'] = '';
+	localStorage['saludo'] = '';
+	location.href = location.href;
+}
 </script>
 <body>
 Username: <input type="text" id="username" value=""/><br/>
@@ -62,5 +79,12 @@ Password: <input type="password" id="password" /><br/>
 <div>La lista de las chichis</div>
 <div id="elekipo"></div>
 <div id="nuevo"><input type="text" id="miembro" value="@"><input type="button" onClick="miembronuevo()" value="( o )( o )"></div>
+<input type="text" id="saludo" /><a href="javascript:;" onclick="saludo()">[Agregar/Cambiar saludo]</a>(opcional)<br /><br />
+Vista previa del mensaje (se puede editar a la hora de mandarlo)
+<div id="test" style="width: 250px; height: 100px; border: 1px solid #000;"></div>
+<br />
+Caracteres disponibles: <span id="disponibles"></span>
+<br /><br />
+<a href="javascript:;" onclick="masterexploder()">Borrar todo</a>
 </body>
 </html>

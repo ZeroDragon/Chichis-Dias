@@ -1,3 +1,13 @@
+#elcontenedor{
+	position: fixed;
+	top: 20%;
+	left: 20%;
+	border: 2px solid #123;
+	background-color: #123;
+	padding: 4px;
+	border-radius: 8px;
+	font-family: Verdana, Geneva, sans-serif;
+}
 .nomevez{
 	display:none;
 }
@@ -22,10 +32,48 @@
 	background-color: #555;
 	color: #fff;
 }
-.ui-button-text-only .ui-button-text{
-	padding: 2px !important;
-	width: 100px;
+#titulo{
+	background-color: #789;
+	margin-bottom: 5px;
+	border-radius: 4px;
+	color: #fff;
+	padding: 4px;
+	text-align: center;
 }
-.ui-widget .ui-widget {
+.boton{
+	text-align: center;
+	background-color: #456;
+	cursor: default;
+	float: right;
+	border: 1px solid #456;
+	border-radius: 4px;
+	width: 52px;
+	height: 15px;
+	padding: 2px 4px 2px 4px;
+	margin: 0 2px 0 2px;
 	font-size: 12px !important;
+	color: #fff;
+}
+.boton:hover{
+	background-color: #123;
+	border-color: #123;
+}
+.boton2{
+	text-align: center;
+	float: right;
+	width: 52px;
+	height: 15px;
+	padding: 2px 4px 2px 4px;
+	margin: 0 2px 0 2px;
+}
+#abajos{
+	margin-bottom:0px;
+	margin-top:5px;
+}
+#quedan{
+	color: #fff;
+	float: left;
+}
+#formularioo{
+	margin: 0px;
 }

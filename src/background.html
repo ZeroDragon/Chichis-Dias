@@ -2,24 +2,22 @@
 <html>
   <head>
   <link type="text/css" href="css/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/jqueryui.js"></script>
   </head>
   <body>
     <script>
       function mandar() {
         return function(info, tab) {
-          chrome.tabs.insertCSS(null, {file: "css/main.css"}, function(){
-            chrome.tabs.insertCSS(null, {file: "css/jquery-ui-1.8.13.custom.css"},function(){
-              chrome.tabs.executeScript(null, { file: "js/jquery.js" }, function() {
-                chrome.tabs.executeScript(null, { file: "js/jqueryui.js" }, function(){
-                  chrome.tabs.executeScript(null, { file: "js/traelos.js" }, function(){
-                    chrome.tabs.executeScript(null, { code: "display('"+info.srcUrl+"','"+localStorage['username']+"','"+localStorage['password']+"','"+localStorage['equipo']+"');" });
-                  });
-                });
+          if(localStorage['username'] && localStorage['password']){
+        //  chrome.tabs.insertCSS(null, {file: "css/main.css"}, function(){
+            chrome.tabs.executeScript(null, { file: "js/jquery.js" }, function() {
+              chrome.tabs.executeScript(null, { file: "js/traelos.js" }, function(){
+                chrome.tabs.executeScript(null, { code: "display('"+info.srcUrl+"','"+localStorage['username']+"','"+localStorage['password']+"','"+localStorage['saludo']+"','"+localStorage['equipo']+"');" });
               });
             });
-          });
+        //  });
+          }else{
+            alert('Chichis Dias no esta configurado, ve a las opciones de la extension para configurarlo');
+          }
         };
       };
       chrome.contextMenus.create({

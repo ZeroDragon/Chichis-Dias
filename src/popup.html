@@ -30,9 +30,9 @@ $('#mensaje').keyup(function(){
 function despliega(){
 	if(localStorage['equipo']){
 		ekipo = localStorage['equipo'].split('#');
-		$('#mensaje').html(ekipo.join(' '));
+		$('#mensaje').html(localStorage['saludo']+ekipo.join(' '));
 	}
-	cuantos = 115 - $('#mensaje').val().length;
+	cuantos = 114 - $('#mensaje').val().length;
 	$('#conteo').html('Caracteres disponibles: '+cuantos);
 }
 </script>
