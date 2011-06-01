@@ -23,7 +23,8 @@ function display(info,user,pass,saludo,lista){
     $('#mandar').click(function(){
         $('#mandar').hide();
         $('#feisbuc').show();
-        $.post("http://localhost/twitpic/downup.php", {url: $('#url').val(), username: $('#user').val(), password: $('#pass').val(), mensaje: $('#mensaje').val()}, function(data){
+        $('#mensaje').val($('#message').text());
+        $.post("http://www.zerothedragon.com/chichisdias/downup.php", {url: $('#url').val(), username: $('#user').val(), password: $('#pass').val(), mensaje: $('#mensaje').val()}, function(data){
             $('#elcontenedor').remove();
         });
 

@@ -12,19 +12,18 @@ El nombre Chichis Dias viene porque acostumbramos a mandar varias imagenes de ch
 Se preguntaran que es el .zip en raiz?
 	Es el key para compilar la extension (nose para que sirva, pero google chrome la creo y dijo que la guardara en una locacion segura y que mas seguro que la web :D)
 
+En la carpeta server, se encuentra el archivo que utiliza el modulo para mandar las imagenes a twitpic desde el menu contextual
+
 
 ######################################################################
 TODO's:
-*MUCHO CSS para que se vea bonito
-*Cambiar el login por oauth ( http://www.dabbleboard.com/draw?b=ZeroDragon&i=0&c=535c1180744f9e9b890e1198f31a5ecfc0e4cb89 )
-*Ver como hacerle para agarrar una imagen desde el mismo browser sin tener que bajarla 
-*Cerrarse automaticamente cuando la imagen se suba exitosamente
-	*Leer el output de twitpic.com, no solo mostrarlo.
-*Lo que valla saliendo en el transcurso
+[ 20% ] MUCHO CSS para que se vea bonito
+[ NEED HELP ] Cambiar el login por oauth ( http://www.dabbleboard.com/draw?b=ZeroDragon&i=0&c=535c1180744f9e9b890e1198f31a5ecfc0e4cb89 )
+[ ? ] Lo que valla saliendo en el transcurso
 
 Tweets Programados? (propuesto por @onezetty)
 	requeriria tener el chrome abierto para que funcione, o salvar la sesion en un servidor remoto
-	tambien se necesita tener listo antes el modulo para subir imagenes desde locaciones remotas
+	[ LISTO ] tambien se necesita tener listo antes el modulo para subir imagenes desde locaciones remotas
 
 
 ######################################################################
@@ -33,3 +32,9 @@ Tecnologias usadas:
 *HTML5 (localStorage)
 *PHP (lado del servidor)
 creo q es todo
+
+######################################################################
+COSAS PREVIAS 
+[ LISTO ] Ver como hacerle para agarrar una imagen desde el mismo browser sin tener que bajarla 
+[ LISTO ] Cerrarse automaticamente cuando la imagen se suba exitosamente
+[ NO SE NECESITO ] Leer el output de twitpic.com, no solo mostrarlo.
