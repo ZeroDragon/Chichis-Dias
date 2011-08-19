@@ -9,7 +9,7 @@ function display(info,user,pass,saludo,lista){
     $('#ventanita').append('<div id="message" class="twitt">'+saludo+ekipo.join(' ')+'</div>');
     $('#elcontenedor').append('<div style="clear:both"></div>');
     $('#elcontenedor').append('<div id="abajos"><div id="quedan">Quedan XXX caracteres</div></div>');
-    $('#abajos').append('<div class="boton2 nomevez" id="feisbuc"><img src="http://localhost/twitpic/img/load.gif" /></div>');
+    $('#abajos').append('<div class="boton2 nomevez" id="feisbuc"><span style="color:#fff;">...</span></div>');
     $('#abajos').append('<div class="boton" id="mandar">mandar</div>');
     $('#abajos').append('<div id="cerrar" class="boton">cerrar</div>');
     $('#message').click(function(){

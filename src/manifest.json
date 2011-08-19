@@ -1,6 +1,6 @@
 {
   "name": "Chichis Dias",
-  "version": "1.5",
+  "version": "1.51",
   "description": "Extension para subir chichis al twitpic y mandar el twitt.",
   "options_page": "options.html",
   "background_page" : "background.html",
